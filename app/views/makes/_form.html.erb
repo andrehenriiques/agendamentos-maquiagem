@@ -1,0 +1,39 @@
+<%= form_with(model: make, local: true) do |form| %>
+  <% if make.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(make.errors.count, "error") %> prohibited this make from being saved:</h2>
+
+      <ul>
+      <% make.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+      <%= image_tag("logos/tabela_make.png",  width: '450px')%>
+
+  <div class="field">
+    <%= form.label :Nome %>
+    <%= form.text_field :name, id: :make_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Telefone %>
+    <%= form.text_field :phone, id: :make_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :TipoDeMake %>
+    <%= form.text_field :price, id: :make_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :DataDoAtendimento %>
+    <%= form.date_select :date, id: :make_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

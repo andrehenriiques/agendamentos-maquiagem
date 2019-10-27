@@ -1,0 +1,26 @@
+<h1 class = "Confirmado">Atendimento Realizado !</h1>
+<h2 class = "Confirmado">Aguarde Confirmação via Celular<h2>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong  class= "FousOnPanle">Nome:</strong>
+  <%= @make.name %>
+</p>
+
+<p>
+  <strong  class= "FousOnPanle">Telefone:</strong>
+  <%= @make.phone %>
+</p>
+
+<p>
+  <strong  class= "FousOnPanle">Maquiagem:</strong>
+  <%= @make.price %>
+</p>
+
+<p>
+  <strong  class= "FousOnPanle">Data:</strong>
+  <%= @make.date %>
+</p>
+
+<%= link_to 'Editar', edit_make_path(@make), :style => 'color: #FF69B4' %> |
+<%= link_to 'Voltar', "/inicio", :style => 'color: #FF69B4' %>

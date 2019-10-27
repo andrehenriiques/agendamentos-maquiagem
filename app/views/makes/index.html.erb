@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+      <%= image_tag("logos/logo3.png",  width: '450px')%>
+
+<table>
+  <thead>
+    <tr>
+      <th class="Cinza">Nome</th>
+      <th class="Cinza">Telefone</th>
+      <th class="Cinza">Maquiagem</th>
+      <th class="Cinza">Atendimento</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @makes.each do |make| %>
+      <tr>
+        <td class="FousOnPanle"><%= make.name %></td>
+        <td class="FousOnPanle"><%= make.phone %></td>
+        <td class="FousOnPanle"><%= make.price %></td>
+        <td class="FousOnPanle"><%= make.date %></td>
+        <td ><%= link_to 'Mostrar', make, :style => 'color: #FF69B4' %></td>
+        <td ><%= link_to 'Editar', edit_make_path(make), :style => 'color: #FF69B4' %></td>
+        <td ><%= link_to 'Deletar', make, method: :delete, data: { confirm: 'Você tem certeza ?' }, :style => 'color: #FF69B4' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<td class="FousOnPanle"><%= link_to 'Nova Maquiagem', new_make_path, :style => 'color: #FF69B4' %></td>
